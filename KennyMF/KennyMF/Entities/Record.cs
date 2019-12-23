@@ -1,4 +1,6 @@
 ﻿using KennyMF.Enums;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -16,7 +18,7 @@ namespace KennyMF.Entities
         public SubmissionStatus SubmissionStatus { get; set; }
         public string Message { get; set; }
         public long ApiRecordId { get; set; }
-
+        public JObject ResponseJObject => JsonConvert.DeserializeObject<JObject>(ResponseJson);
         public bool HasSmilePhoto { get; set; }
         public string SmileUserTag { get; set; }
     }

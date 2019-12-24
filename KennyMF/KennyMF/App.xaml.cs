@@ -1,12 +1,11 @@
-﻿using DLToolkit.Forms.Controls;
+﻿using Autofac;
+using DLToolkit.Forms.Controls;
 using KennyMF.Data;
 using KennyMF.Entities;
 using KennyMF.Services;
 using System;
-using System.ComponentModel;
 using System.IO;
 using System.Linq;
-using System.Reflection;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -88,6 +87,7 @@ namespace KennyMF
         private IContainer BuilContainer(Module module)
         {
             var builder = new ContainerBuilder();
+            return builder.Build();
         }
 
         private void RegisterSyncfusion()

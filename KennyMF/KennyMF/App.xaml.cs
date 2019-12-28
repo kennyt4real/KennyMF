@@ -2,6 +2,8 @@
 using DLToolkit.Forms.Controls;
 using KennyMF.Data;
 using KennyMF.Entities;
+using KennyMF.PageModels;
+using KennyMF.Pages;
 using KennyMF.Services;
 using System;
 using System.IO;
@@ -65,7 +67,7 @@ namespace KennyMF
                 }
                 else
                 {
-                    MainPage = new TeamPage();
+                    //MainPage = new TeamPage();
                 }
             }
 
@@ -87,6 +89,9 @@ namespace KennyMF
         private IContainer BuilContainer(Module module)
         {
             var builder = new ContainerBuilder();
+            builder.RegisterType<LoginPage>().AsSelf().SingleInstance();
+            builder.RegisterType<LoginPageModel>().AsSelf();
+            builder.RegisterModule(module);
             return builder.Build();
         }
 

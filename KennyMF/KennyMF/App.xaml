@@ -3,6 +3,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="KennyMF.App">
     <Application.Resources>
-
+        <ResourceDictionary>
+            <OnPlatform x:TypeArguments="x:String" x:Key="AvenirRoman">
+                <On Platform="Android" Value="/Fonts/AvenirRoman.otf#Avenir"/>
+                <On Platform="UWP" Value="/Assets/OpenSans-Bold.ttf#Open Sans"/>
+                <On Platform="iOS" Value="OpenSans-BOld"/>
+            </OnPlatform>
+        </ResourceDictionary>
+        <Style TargetType="NavigationPage">
+            <Setter Property="BarBackgroundColor" Value="Transparent"/>
+            <Setter Property="BarTextColor" Value="AliceBlue"/>
+        </Style>
+        <Color x:Key="Accent">#0f375a</Color>
     </Application.Resources>
 </Application>
